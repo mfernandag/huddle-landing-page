@@ -11,6 +11,7 @@ body{
     background-repeat: no-repeat; 
     height: 100vh;
     padding: 0px 70px;
+    margin-bottom: 70px;
     .header{
         display: flex;
         justify-content: space-between;
@@ -63,5 +64,77 @@ body{
                 width: 105%;
             }
         }
+    }
+}
+
+.cards{
+    padding: 0px 120px;
+    margin-bottom: 150px;
+    .sections-wrapper{
+        .content{
+            box-shadow: 0 0 5px 2px #ebebeb;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            padding: 50px 0px 40px 80px;
+            .content-text{ 
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .section-text{
+                    color: hsl(192, 100%, 9%);
+                    font-weight: bold;
+                }
+                .content-more{
+                    color: hsl(208, 11%, 55%);
+                }
+            }
+            .content-text-right{
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                //align-items: flex-start;
+                margin-left: 40px;
+                padding-right: 15px;
+                .section-text{
+                    color: hsl(192, 100%, 9%);
+                    font-weight: bold;
+                }
+                .content-more{
+                    color: hsl(208, 11%, 55%);
+                }
+            }
+            .content-img{
+                width: 40%;
+                //justify-content: flex-end;
+                justify-content: space-between;
+                margin-left: auto;
+                .img-cards{
+                    width: 90%;
+                    margin-left: auto;
+                }
+            }
+            .content-img-left{
+                width: 40%;
+                justify-content: flex-end;
+                .img-cards-left{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    .footer-sign-wrapper{
+        box-shadow: 0 0 5px 2px #ebebeb;
+        width: 600px;
+        border-radius: 20px;
+    }
+    .last-section-wrapper{
+        background-color: hsl(192, 100%, 9%);
     }
 }
