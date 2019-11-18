@@ -1,11 +1,12 @@
 body{
     margin: 0px;
     font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
 }
 
 
 .front-page{
-    background-image: url('../images/bg-hero-desktop.svg');
+    background: linear-gradient(rgba(141, 205, 221, 0.3), rgba(141, 205, 221, 0.3)), url('../images/bg-hero-desktop.svg');
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat; 
@@ -17,10 +18,9 @@ body{
         justify-content: space-between;
         padding-top: 50px;
         margin-bottom: 60px;
-        .logo{
-        }
         .try-button{
             background-color: white;
+            cursor: pointer;
             padding: 10px 50px;
             border: none;
             border-radius: 30px;
@@ -33,7 +33,7 @@ body{
         display: flex;
         justify-content: space-between;
         .fp-content{
-            width: 40%;
+            width: 38%;
             color: hsl(192, 100%, 9%);
             .fp-title{
                 font-family: 'Poppins', sans-serif;
@@ -41,13 +41,15 @@ body{
                 font-weight: bolder;
             }
             .fp-text{
+                font-size: 16px;
                 margin-bottom: 30px;
                 line-height: 28px;
-                font-weight: bold;
+                //font-weight: bold;
                 color: hsl(192, 100%, 18%)
             }
             .getstarted-btn{
                 background-color: hsl(322, 100%, 66%);
+                cursor: pointer;
                 color: white;
                 font-weight: bold;
                 border-radius: 30px;
@@ -69,7 +71,7 @@ body{
 
 .cards{
     padding: 0px 120px;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
     .sections-wrapper{
         .content{
             box-shadow: 0 0 5px 2px #ebebeb;
@@ -109,7 +111,6 @@ body{
             }
             .content-img{
                 width: 40%;
-                //justify-content: flex-end;
                 justify-content: space-between;
                 margin-left: auto;
                 .img-cards{
@@ -128,13 +129,155 @@ body{
     }
 }
 
-.footer{
+.mega-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .footer-sign-wrapper{
-        box-shadow: 0 0 5px 2px #ebebeb;
-        width: 600px;
+        box-shadow: 0 0 2px 2px #ebebeb;
+        background-color: white;
+        width:40%;
         border-radius: 20px;
+        padding: 40px 55px 40px 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        bottom: -1640px;
+        z-index: 1;
+        .sign-title{
+            color: hsl(192, 100%, 9%);
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .button-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            .getstartedbtn-large{
+                background-color: hsl(322, 100%, 66%);
+                cursor: pointer;
+                color: white;
+                font-size: 14px;
+                font-weight: bold;
+                border:none;
+                border-radius: 25px;
+                width: 280px;
+                padding: 20px 30px;
+                box-shadow: 0px 5px 5px #d3d3d3;
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
     }
+}
+
+.footer{
     .last-section-wrapper{
+        position: relative;
         background-color: hsl(192, 100%, 9%);
+        padding: 10% 10% 0px 15%;
+        margin-top: 200px;
+        color: white;
+        .footer-logo-wrapper{
+            display: flex;
+            flex-direction: column;
+            .footer-logo{
+                fill: white;
+                color: white;
+                border: 1px solid white;
+                path{
+                    fill:white;
+                }
+            }
+        }
+        .bottom-options{
+            display: flex;
+            justify-content: space-between;
+            padding: 5% 10% 0px 0px;
+            .contact-wrapper{
+                width: 400px;
+                .contact-info{
+                    list-style-type: none;
+                    padding: 0px;
+                    margin: 0px;
+                    li{
+                        display: flex;
+                        margin-bottom: 30px;
+                        .data-icon{
+                            height: 100%;
+                            width: 18px;
+                        }
+                        p{
+                            margin:0;
+                            padding-left: 10%;
+                            line-height: 25px;
+                            font-family: 'Poppins', sans-serif;;
+                        }
+                    }
+                }
+            }
+            .links-wrapper{
+                height: 50px;
+                .links-list{
+                    list-style-type: none;
+                    text-decoration: none;
+                    margin: 0px;
+                    padding-left: 15px;
+                    .footer-links{
+                        color: white;
+                        text-decoration: none;
+                        li{
+                            padding-bottom: 15px;
+                            &:hover{
+                                color: hsl(322, 100%, 66%);
+                            }
+                        }
+                    }
+                }
+            }
+            .smlinks-wrapper{
+                display: flex;
+                .sm-link{
+                    font-family: 'Poppins', sans-serif;
+                    color: white;
+                    border: 1px solid white;
+                    border-radius: 50%;
+                    width: 28px;
+                    height: 28px;
+                    display: block;
+                    text-decoration: none;
+                    display:flex;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    margin-right: 15px;
+                    &:hover{
+                        color: hsl(322, 100%, 66%);
+                        border-color: hsl(322, 100%, 66%);
+                    }
+                }
+            }
+        }
+    }
+    .copyright-wrapper{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+.challenge-data{
+    background-color: hsl(192, 100%, 9%);
+    color: white;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    .frontend-mentor{
+        text-decoration: none;
+        color: hsl(322, 100%, 66%);
     }
 }
