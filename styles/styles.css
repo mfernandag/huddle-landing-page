@@ -1,18 +1,35 @@
 body {
-  margin: 0px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 
 .front-page {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(141, 205, 221, 0.3)), to(rgba(141, 205, 221, 0.3))), url("../images/bg-hero-desktop.svg");
   background: linear-gradient(rgba(141, 205, 221, 0.3), rgba(141, 205, 221, 0.3)), url("../images/bg-hero-desktop.svg");
   background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
   height: 100vh;
-  padding: 0px 70px;
-  margin-bottom: 70px;
+  padding: 0px 10%;
+  margin: 0px 0px 70px 0px;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 320px) {
+  .front-page {
+    padding: 0px 2%;
+  }
 }
 
 .front-page .header {
@@ -26,7 +43,41 @@ body {
   margin-bottom: 60px;
 }
 
-.front-page .header .try-button {
+@media only screen and (max-width: 320px) {
+  .front-page .header {
+    padding-top: 30px;
+  }
+}
+
+.front-page .header .header-logo-wrapper {
+  width: 50%;
+}
+
+@media only screen and (max-width: 320px) {
+  .front-page .header .header-logo-wrapper .logo {
+    width: 80%;
+  }
+}
+
+.front-page .header .header-btn-wrapper {
+  width: 50%;
+}
+
+@media only screen and (max-width: 320px) {
+  .front-page .header .header-btn-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.front-page .header .header-btn-wrapper .try-button {
   background-color: white;
   cursor: pointer;
   padding: 10px 50px;
@@ -38,6 +89,12 @@ body {
           box-shadow: 0 0 5px 2px #ebebeb;
 }
 
+@media only screen and (max-width: 320px) {
+  .front-page .header .header-btn-wrapper .try-button {
+    padding: 5px 18px;
+  }
+}
+
 .front-page .fp-content-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,15 +104,44 @@ body {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 320px) {
+  .front-page .fp-content-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+}
+
 .front-page .fp-content-wrapper .fp-content {
   width: 38%;
   color: #00252e;
+}
+
+@media only screen and (max-width: 320px) {
+  .front-page .fp-content-wrapper .fp-content {
+    width: 100%;
+  }
 }
 
 .front-page .fp-content-wrapper .fp-content .fp-title {
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
   font-weight: bolder;
+}
+
+@media only screen and (max-width: 320px) {
+  .front-page .fp-content-wrapper .fp-content .fp-title {
+    font-size: 26px;
+    margin-top: 0px;
+  }
 }
 
 .front-page .fp-content-wrapper .fp-content .fp-text {
@@ -76,6 +162,12 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+@media only screen and (max-width: 320px) {
+  .front-page .fp-content-wrapper .fp-content .getstarted-btn {
+    margin-bottom: 40px;
+  }
+}
+
 .front-page .fp-content-wrapper .fp-image-wrapper {
   width: 50%;
   display: -webkit-box;
@@ -86,8 +178,27 @@ body {
           justify-content: flex-end;
 }
 
+@media only screen and (max-width: 320px) {
+  .front-page .fp-content-wrapper .fp-image-wrapper {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+}
+
 .front-page .fp-content-wrapper .fp-image-wrapper .img-wrapper {
   width: 105%;
+}
+
+@media only screen and (max-width: 320px) {
+  .front-page .fp-content-wrapper .fp-image-wrapper .img-wrapper {
+    width: 90%;
+  }
 }
 
 .cards {
@@ -252,8 +363,13 @@ body {
   outline: none;
 }
 
+.footer {
+  width: 100%;
+}
+
 .footer .last-section-wrapper {
   position: relative;
+  width: 100%;
   background-color: #00252e;
   padding: 10% 10% 0px 15%;
   margin-top: 200px;
@@ -268,12 +384,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.footer .last-section-wrapper .footer-logo-wrapper .footer-logo {
-  fill: white;
-  color: white;
-  border: 1px solid white;
 }
 
 .footer .last-section-wrapper .footer-logo-wrapper .footer-logo path {

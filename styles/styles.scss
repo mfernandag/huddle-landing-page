@@ -1,44 +1,99 @@
+$mobile: 320px;
+
 body{
-    margin: 0px;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
 }
 
+html{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
 
 .front-page{
     background: linear-gradient(rgba(141, 205, 221, 0.3), rgba(141, 205, 221, 0.3)), url('../images/bg-hero-desktop.svg');
     background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat; 
+    //background-position: center bottom;
+    //background-repeat: no-repeat; 
     height: 100vh;
-    padding: 0px 70px;
-    margin-bottom: 70px;
+    padding: 0px 10%;
+    margin: 0px 0px 70px 0px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    @media only screen and (max-width: $mobile){
+        padding: 0px 2%;
+    }
     .header{
         display: flex;
         justify-content: space-between;
         padding-top: 50px;
         margin-bottom: 60px;
-        .try-button{
-            background-color: white;
-            cursor: pointer;
-            padding: 10px 50px;
-            border: none;
-            border-radius: 30px;
-            font-size: 15.5px;
-            font-weight: bold;
-            box-shadow: 0 0 5px 2px #ebebeb;
+        @media only screen and (max-width: $mobile){
+            padding-top: 30px;
+        }
+        .header-logo-wrapper{
+            width: 50%;
+            .logo{
+                @media only screen and (max-width: $mobile){
+                    width: 80%;
+                }
+            }
+        }
+        .header-btn-wrapper{
+            width: 50%;
+            @media only screen and (max-width: $mobile){
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+            }
+            .try-button{
+                background-color: white;
+                cursor: pointer;
+                padding: 10px 50px;
+                border: none;
+                border-radius: 30px;
+                font-size: 15.5px;
+                font-weight: bold;
+                box-shadow: 0 0 5px 2px #ebebeb;
+                @media only screen and (max-width: $mobile){
+                    padding: 5px 18px;
+                }
+            }
         }
     }
     .fp-content-wrapper{
         display: flex;
         justify-content: space-between;
+        @media only screen and (max-width: $mobile){
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
         .fp-content{
             width: 38%;
             color: hsl(192, 100%, 9%);
+            @media only screen and (max-width: $mobile){
+                width: 100%;
+            }
             .fp-title{
                 font-family: 'Poppins', sans-serif;
                 font-size: 36px;
                 font-weight: bolder;
+                @media only screen and (max-width: $mobile){
+                    font-size: 26px;
+                    margin-top: 0px;
+                }
             }
             .fp-text{
                 font-size: 16px;
@@ -56,14 +111,26 @@ body{
                 border: none;
                 padding: 15px 50px;
                 font-family: 'Open Sans', sans-serif;
+                @media only screen and (max-width: $mobile){
+                    margin-bottom: 40px;
+                }
             }
         }
         .fp-image-wrapper{
             width: 50%;
             display: flex;
             justify-content: flex-end;
+            @media only screen and (max-width: $mobile){
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
             .img-wrapper{
                 width: 105%;
+                @media only screen and (max-width: $mobile){
+                    width: 90%;
+                }
             }
         }
     }
@@ -176,8 +243,10 @@ body{
 }
 
 .footer{
+    width: 100%;
     .last-section-wrapper{
         position: relative;
+        width: 100%;
         background-color: hsl(192, 100%, 9%);
         padding: 10% 10% 0px 15%;
         margin-top: 200px;
@@ -186,9 +255,6 @@ body{
             display: flex;
             flex-direction: column;
             .footer-logo{
-                fill: white;
-                color: white;
-                border: 1px solid white;
                 path{
                     fill:white;
                 }
