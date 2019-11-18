@@ -109,7 +109,7 @@ html {
           justify-content: space-between;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 920px) {
   .front-page .fp-content-wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -130,6 +130,12 @@ html {
   color: #00252e;
 }
 
+@media only screen and (max-width: 920px) {
+  .front-page .fp-content-wrapper .fp-content {
+    width: 95%;
+  }
+}
+
 @media only screen and (max-width: 720px) {
   .front-page .fp-content-wrapper .fp-content {
     width: 100%;
@@ -140,6 +146,12 @@ html {
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
   font-weight: bolder;
+}
+
+@media only screen and (max-width: 920px) {
+  .front-page .fp-content-wrapper .fp-content .fp-title {
+    font-size: 32px;
+  }
 }
 
 @media only screen and (max-width: 720px) {
@@ -173,7 +185,7 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 920px) {
   .front-page .fp-content-wrapper .fp-content .getstarted-btn {
     margin-bottom: 40px;
   }
@@ -220,7 +232,12 @@ html {
 
 .cards {
   padding: 0px 10%;
-  margin-bottom: 80px;
+}
+
+@media only screen and (max-width: 720px) {
+  .cards {
+    padding: 0% 7%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -360,6 +377,12 @@ html {
   padding: 5% 0% 4% 10%;
 }
 
+@media only screen and (max-width: 720px) {
+  .cards .sections-wrapper .content-middle {
+    padding: 5% 1% 4% 6%;
+  }
+}
+
 @media only screen and (max-width: 320px) {
   .cards .sections-wrapper .content-middle {
     -webkit-box-orient: vertical;
@@ -389,8 +412,14 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 40px;
   padding-right: 15px;
+  line-height: 25px;
+}
+
+@media only screen and (max-width: 720px) {
+  .cards .sections-wrapper .content-middle .content-text-right {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -426,9 +455,28 @@ html {
 
 .cards .sections-wrapper .content-middle .content-img-left {
   width: 40%;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 720px) {
+  .cards .sections-wrapper .content-middle .content-img-left {
+    width: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -440,6 +488,13 @@ html {
 
 .cards .sections-wrapper .content-middle .content-img-left .img-cards-left {
   width: 90%;
+}
+
+@media only screen and (max-width: 720px) {
+  .cards .sections-wrapper .content-middle .content-img-left .img-cards-left {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -478,16 +533,22 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  position: absolute;
-  bottom: -240%;
+  position: relative;
+  top: 70px;
   z-index: 1;
+}
+
+@media only screen and (max-width: 720px) {
+  .mega-wrapper .footer-sign-wrapper {
+    width: 60%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
   .mega-wrapper .footer-sign-wrapper {
     width: 87%;
     padding: 4% 3% 8% 3%;
-    bottom: -212%;
+    top: 100px;
   }
 }
 
@@ -545,11 +606,21 @@ html {
 }
 
 .footer .last-section-wrapper {
-  position: relative;
   background-color: #00252e;
   padding: 10% 10% 0px 15%;
-  margin-top: 200px;
   color: white;
+}
+
+@media only screen and (max-width: 920px) {
+  .footer .last-section-wrapper {
+    padding: 15% 0% 0% 10%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .footer .last-section-wrapper {
+    padding: 20% 0% 0% 5%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -582,6 +653,12 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 5% 10% 0px 0px;
+}
+
+@media only screen and (max-width: 720px) {
+  .footer .last-section-wrapper .bottom-options {
+    padding: 5% 3% 0px 0px;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -662,6 +739,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
 }
 
 @media only screen and (max-width: 320px) {
@@ -711,6 +789,12 @@ html {
   font-size: 12px;
   color: white;
   padding-right: 10%;
+}
+
+@media only screen and (max-width: 720px) {
+  .copyright-wrapper {
+    padding-right: 4%;
+  }
 }
 
 @media only screen and (max-width: 320px) {
