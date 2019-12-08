@@ -2,11 +2,66 @@ $mobile: 320px;
 $tablet: 720px;
 $first: 920px;
 
+//colors
+$hot-pink: hsl(322, 100%, 66%);
+$hot-pink-hover: #ff1fac;
+$dark-blue: hsl(192, 100%, 9%);
+$grey: hsl(208, 11%, 55%);
+
+@mixin to-center-all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@mixin cards-content{
+    box-shadow: 0 0 5px 2px #ebebeb;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    padding: 5% 0% 4% 10%;
+}
+
+@mixin content-text{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin content-img{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin section-title{
+    color: $dark-blue;
+    font-weight: bold;
+    font-size: 26px;
+    @media only screen and (max-width: $mobile){
+        font-size: 22px;
+    }
+}
+
+@mixin content-more{
+    color: $grey;
+    font-size: 15px;
+    line-height: 25px;
+    @media only screen and (max-width: $mobile){
+        margin-top: 0px;
+    }
+}
+
+
 body{
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     width: 100%;
-    //height: 100%;
     margin: 0px;
     padding: 0px;
     overflow-x: hidden;
@@ -22,8 +77,6 @@ html{
 .front-page{
     background: linear-gradient(rgba(141, 205, 221, 0.3), rgba(141, 205, 221, 0.3)), url('../images/bg-hero-desktop.svg');
     background-size: cover;
-    //background-position: center bottom;
-    //background-repeat: no-repeat; 
     height: 100vh;
     padding: 0px 10%;
     margin-bottom: 70px;
@@ -42,7 +95,7 @@ html{
         display: flex;
         justify-content: space-between;
         padding-top: 50px;
-        margin-bottom: 60px;
+        margin-bottom: 100px;
         @media only screen and (max-width: $tablet){
             margin-bottom: 80px;
         }
@@ -70,6 +123,9 @@ html{
                 border-radius: 30px;
                 font-weight: bold;
                 box-shadow: 0 0 5px 2px #ebebeb;
+                &:hover{
+                    box-shadow: 0 0 5px 2px #d3d3d3;
+                }
                 @media only screen and (max-width: $mobile){
                     padding: 5px 18px;
                 }
@@ -81,13 +137,11 @@ html{
         justify-content: space-between;
         @media only screen and (max-width: $first){
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            @include to-center-all();
         }
         .fp-content{
             width: 38%;
-            color: hsl(192, 100%, 9%);
+            color: $dark-blue;
             @media only screen and (max-width: $first){
                 width:95%;
             }
@@ -96,8 +150,9 @@ html{
             }
             .fp-title{
                 font-family: 'Poppins', sans-serif;
-                font-size: 36px;
+                font-size: 40px;
                 font-weight: bolder;
+                margin-top: 0px;
                 @media only screen and (max-width: $first){
                     font-size: 32px;
                 }
@@ -113,11 +168,10 @@ html{
                 font-size: 16px;
                 margin-bottom: 30px;
                 line-height: 28px;
-                //font-weight: bold;
                 color: hsl(192, 100%, 18%)
             }
             .getstarted-btn{
-                background-color: hsl(322, 100%, 66%);
+                background-color: $hot-pink;
                 cursor: pointer;
                 color: white;
                 font-weight: bold;
@@ -128,6 +182,9 @@ html{
                 @media only screen and (max-width: $first){
                     margin-bottom: 40px;
                 }
+                &:hover{
+                    background-color: $hot-pink-hover;
+                }
             }
         }
         .fp-image-wrapper{
@@ -136,9 +193,7 @@ html{
             justify-content: flex-end;
             @media only screen and (max-width: $tablet){
                 width: 55%;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
+                @include to-center-all();
             }
             @media only screen and (max-width: $mobile){
                 width: 100%;
@@ -160,54 +215,29 @@ html{
     }
     @media only screen and (max-width: $mobile){
         padding: 0% 5%;
-        //margin-bottom: 0px;
     }
     .sections-wrapper{
         .content{
-            box-shadow: 0 0 5px 2px #ebebeb;
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 40px;
-            border-radius: 20px;
-            padding: 5% 0% 4% 10%;
+            @include cards-content();
             @media only screen and (max-width: $mobile){
                 flex-direction: column-reverse;
                 padding: 5% 5% 3% 5%;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
+                @include to-center-all();
             }
             .content-text{ 
-                width: 45%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                @include content-text();
                 @media only screen and (max-width: $mobile){
                     width: 95%;
                 }
                 .section-title{
-                    color: hsl(192, 100%, 9%);
-                    font-weight: bold;
-                    font-size: 26px;
-                    @media only screen and (max-width: $mobile){
-                        font-size: 22px;
-                    }
+                    @include section-title();
                 }
                 .content-more{
-                    color: hsl(208, 11%, 55%);
-                    font-size: 15px;
-                    line-height: 25px;
-                    @media only screen and (max-width: $mobile){
-                        margin-top: 0px;
-                    }
+                    @include content-more();
                 }
             }
             .content-img{
-                width: 40%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                text-align: center;
+                @include content-img();
                 @media only screen and (max-width: $tablet){
                     width: 50%;
                     display: flex;
@@ -227,27 +257,17 @@ html{
             }
         }
         .content-middle{
-            box-shadow: 0 0 5px 2px #ebebeb;
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 40px;
-            border-radius: 20px;
-            padding: 5% 0% 4% 10%;
+            @include cards-content();
             @media only screen and (max-width: $tablet){
                 padding: 5% 1% 4% 6%;
             }
             @media only screen and (max-width: $mobile){
                 flex-direction: column;
                 padding: 5% 5% 3% 5%;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
+                @include to-center-all();
             }
             .content-text-right{
-                width: 45%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                @include content-text();
                 padding-right: 15px;
                 line-height: 25px;
                 @media only screen and (max-width: $tablet){
@@ -259,27 +279,14 @@ html{
                     padding: 0px;
                 }
                 .section-title{
-                    color: hsl(192, 100%, 9%);
-                    font-weight: bold;
-                    font-size: 26px;
-                    @media only screen and (max-width: $mobile){
-                        font-size: 22px;
-                    }
+                    @include section-title();
                 }
                 .content-more{
-                    color: hsl(208, 11%, 55%);
-                    font-size: 15px;
-                    @media only screen and (max-width: $mobile){
-                        margin-top: 0px;
-                    }
+                    @include content-more();
                 }
             }
             .content-img-left{
-                width: 40%;
-                display:flex;
-                justify-content: space-between;
-                align-items: center;
-                text-align: center;
+                @include content-img();
                 @media only screen and (max-width: $tablet){
                     width: 45%;
                     display: flex;
@@ -330,7 +337,7 @@ html{
             top: 100px;
         }
         .sign-title{
-            color: hsl(192, 100%, 9%);
+            color: $dark-blue;
             font-size: 28px;
             font-weight: bold;
             @media only screen and (max-width: $mobile){
@@ -338,12 +345,9 @@ html{
             }
         }
         .button-wrapper{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            @include to-center-all();
             .getstartedbtn-large{
-                background-color: hsl(322, 100%, 66%);
+                background-color: $hot-pink;
                 cursor: pointer;
                 color: white;
                 font-size: 14px;
@@ -356,6 +360,9 @@ html{
                 &:focus{
                     outline: none;
                 }
+                &:hover{
+                    background-color: $hot-pink-hover;
+                }
                 @media only screen and (max-width: $mobile){
                     width: 70%;
                 }
@@ -367,9 +374,8 @@ html{
 .footer{
     width: 100%;
     .last-section-wrapper{
-        background-color: hsl(192, 100%, 9%);
+        background-color: $dark-blue;
         padding: 10% 10% 0px 15%;
-        //margin-top: 200px;
         color: white;
         @media only screen and (max-width: $first){
             padding: 15% 0% 0% 10%;
@@ -382,11 +388,8 @@ html{
             margin-top: 50px;
         }
         .footer-logo-wrapper{
-            //display: flex;
             flex-direction: column;
             .footer-logo{
-                //width: 240px;
-                height: 39px;
                 path{
                     fill:white;
                 }
@@ -430,7 +433,6 @@ html{
                 }
             }
             .links-wrapper{
-                //height: 50px;
                 .links-list{
                     list-style-type: none;
                     text-decoration: none;
@@ -445,7 +447,7 @@ html{
                         li{
                             padding-bottom: 15px;
                             &:hover{
-                                color: hsl(322, 100%, 66%);
+                                color: $hot-pink;
                             }
                         }
                     }
@@ -467,14 +469,11 @@ html{
                     height: 28px;
                     display: block;
                     text-decoration: none;
-                    display:flex;
-                    justify-content: center;
-                    text-align: center;
-                    align-items: center;
+                    @include to-center-all();
                     margin-right: 15px;
                     &:hover{
-                        color: hsl(322, 100%, 66%);
-                        border-color: hsl(322, 100%, 66%);
+                        color: $hot-pink;
+                        border-color: $hot-pink;
                     }
                 }
             }
@@ -482,7 +481,7 @@ html{
     }
 }
 .copyright-wrapper{
-    background-color: hsl(192, 100%, 9%);
+    background-color: $dark-blue;
     display: flex;
     justify-content: flex-end;
     font-size: 12px;
@@ -496,15 +495,12 @@ html{
     }
 }
 .challenge-data{
-    background-color: hsl(192, 100%, 9%);
+    background-color: $dark-blue;
     color: white;
     width: 100%;
-    display:flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+    @include to-center-all();
     .frontend-mentor{
         text-decoration: none;
-        color: hsl(322, 100%, 66%);
+        color: $hot-pink;
     }
 }
